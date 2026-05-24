@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<html lang="he" dir="rtl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="צרו קשר עם צוות StudySmart - נשמח לשמוע מכם טיפים, שאלות והצעות לייעול הלמידה והפחתת לחץ.">
+        <meta name="keywords" content="יצירת קשר, טכנולוגיות למידה, סטודנטים, תמיכה, HIT, פיתוח אתרים">
+    
+        <title>StudySmart | יצירת קשר</title>
+        <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+        <link rel="stylesheet" href="styles/style.css">
+    </head>
+    <body>
+        <header class="header">
+            <div class="container navbar">
+                <div class="logo-container">
+                    <a href="index.html" class="logo" aria-label="חזרה לדף הבית של StudySmart">
+                        <span class="logo-icon" aria-hidden="true">🎓</span>
+                        <span>StudySmart</span>
+                    </a>
+                </div>
+        
+                <button class="hamburger" id="hamburger" aria-label="פתיחת תפריט ניווט" aria-expanded="false" aria-controls="navMenu">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </button>
+        
+                <nav id="navMenu" aria-label="תפריט ניווט ראשי">
+                    <ul class="nav-menu">
+                        <li><a href="index.html" class="nav-link">דף הבית</a></li>
+                        <li><a href="methods.html" class="nav-link">שיטות למידה</a></li>
+                        <li><a href="tools.html" class="nav-link">כלים דיגיטליים </a></li>
+                        <li><a href="about.html" class="nav-link">אודות</a></li>
+                        <li><a href="contactUs.html" class="nav-link active" aria-current="page">צור קשר</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main id="main-content">
+            <nav aria-label="פירורי לחם" class="breadcrumbs-container">
+                <div class="container">
+                    <ol class="breadcrumbs">
+                        <li><a href="index.html" title="חזרה לדף הבית">דף הבית</a></li>
+                        <li aria-current="page">צור קשר</li>
+                    </ol>
+                </div>
+            </nav>
+        
+            <section class="page-header text-center" aria-labelledby="page-title">
+                <div class="container">
+                    <h1 id="page-title" class="page-title">נשמח לשמוע מכם</h1>
+                    <p class="page-subtitle">יש לכם שאלה על אחת השיטות? רוצים להמליץ על כלי AI חדש? שלחו לנו הודעה ונחזור אליכם בהקדם.</p>
+                </div>
+            </section>
+        
+            <section class="section section-light" aria-labelledby="contact-heading">
+                <div class="container">
+                    <h2 id="contact-heading" class="visual-hidden">טופס פנייה ופרטי פקולטה</h2>
+        
+                    <div class="contact-wrapper">
+                        <div class="contact-form-container">
+                            <!-- כאן הוסר ה-novalidate כדי שהדפדפן יבדוק את השדות -->
+                            <form action="#" method="POST" class="contact-form">
+        
+                                <div class="form-group">
+                                    <label for="user-name">שם מלא <span class="required-star" aria-hidden="true">*</span></label>
+                                    <input type="text" id="user-name" name="name" required autocomplete="name" placeholder="ישראל ישראלי" aria-required="true">
+                                </div>
+        
+                                <div class="form-group">
+                                    <label for="user-email">כתובת אימייל <span class="required-star" aria-hidden="true">*</span></label>
+                                    <input type="email" id="user-email" name="email" required autocomplete="email" placeholder="name@example.com" aria-required="true">
+                                </div>
+        
+                                <div class="form-group">
+                                    <label for="message-subject">נושא הפנייה <span class="required-star" aria-hidden="true">*</span></label>
+                                    <select id="message-subject" name="subject" required aria-required="true">
+                                        <option value="" disabled selected>בחרו נושא מהרשימה</option>
+                                        <option value="methods">שאלה על שיטות למידה</option>
+                                        <option value="tools">המלצה על כלי דיגיטלי / AI</option>
+                                        <option value="feedback">משוב כללי על האתר</option>
+                                        <option value="other">נושא אחר</option>
+                                    </select>
+                                </div>
+        
+                                <div class="form-group">
+                                    <label for="user-message">תוכן ההודעה <span class="required-star" aria-hidden="true">*</span></label>
+                                    <textarea id="user-message" name="message" rows="6" required placeholder="כתבו כאן את פנייתכם..." aria-required="true"></textarea>
+                                </div>
+        
+                                <button type="submit" class="btn btn-secondary btn-submit">שליחת הודעה ▶</button>
+                            </form>
+                        </div>
+        
+                        <div class="contact-info-container">
+                            <div class="info-card">
+                                <h3>מידע אקדמי</h3>
+                                <p class="info-details">האתר פותח כפרויקט סיום במסגרת הקורס לפיתוח אתרי אינטרנט.</p>
+        
+                                <ul class="info-list">
+                                    <li><strong>מוסד לימודים:</strong> HIT - מכון טכנולוגי חולון</li>
+                                    <li><strong>פקולטה:</strong> הפקולטה לטכנולוגיות למידה</li>
+                                    <li><strong>שנת הגשה:</strong> 2026</li>
+                                </ul>
+                            </div>
+        
+                            <div class="info-card">
+                                <h3>צוות הפיתוח</h3>
+                                <p class="info-details">לשאלות ישירות בנושאי המחקר של האתר, ניתן לפנות למגישי המיזם:</p>
+                                <ul class="team-names-list">
+                                    <li>לירן כהן</li>
+                                    <li>נועה שטרנברג</li>
+                                    <li>מאי דנה</li>
+                                    <li>עמית רוט</li>
+                                </ul>
+                            </div>
+                        </div>
+        
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="container footer-content">
+                <div class="footer-section">
+                    <h4>StudySmart</h4>
+                    <p>הופכים את תקופת הלימודים לחכמה, יעילה ורגועה יותר עבור כל סטודנט וסטודנטית.</p>
+                </div>
+        
+                <div class="footer-section">
+                    <h4>ניווט מהיר</h4>
+                    <ul class="footer-links">
+                        <li><a href="methods.html">שיטות למידה</a></li>
+                        <li><a href="tools.html">כלים דיגיטליים</a></li>
+                        <li><a href="about.html">אודות</a></li>
+                        <li><a href="contactUs.html">צור קשר</a></li>
+                        <li><a href="sitemap.html" class="highlight-link">מפת האתר (Sitemap)</a></li>
+                    </ul>
+                </div>
+        
+                <div class="footer-section">
+                    <h4>מגישי הפרויקט</h4>
+                    <p>לירן כהן, נועה שטרנברג (תכנות), מאי דנה, עמית רוט</p>
+                    <p>הפקולטה לטכנולוגיות למידה, HIT - מכון טכנולוגי חולון</p>
+                </div>
+            </div>
+        
+            <div class="footer-bottom text-center">
+                <p>&copy; 2026 | מוגש כמטלה מסכמת בקורס פיתוח אתרי אינטרנט | נבנה בהתאם לתקן WCAG 2.1</p>
+            </div>
+        </footer>
+        <script src="jScripts/script.js"></script>
+    </body>
+</html>
