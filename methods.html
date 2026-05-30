@@ -1,202 +1,196 @@
 ﻿<!DOCTYPE html>
 <html lang="he" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="שיטות למידה מוכחות לסטודנטים: מטריצת אייזנהואר, שיטת פומודורו וטכניקות ארגון זמן להפחתת עומס.">
-    <meta name="keywords" content="שיטות למידה, מטריצת אייזנהואר, פומודורו, ניהול זמן, התנהגות ארגונית, סטודנטים">
-
-    <title>StudySmart | שיטות למידה וניהול זמן</title>
-    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/style.css">
-</head>
-<body>
-
-<div class="custom-cursor" id="customCursor" aria-hidden="true"></div>
-
-<a href="#main-content" class="skip-to-main">דלג לתוכן המרכזי</a>
-
-<header class="header">
-    <div class="container navbar">
-        <div class="logo-container">
-            <a href="index.html" class="logo" aria-label="חזרה לדף הבית של StudySmart">
-                <span class="logo-icon" aria-hidden="true">🎓</span>
-                <span>StudySmart</span>
-            </a>
-        </div>
-
-        <button class="hamburger" id="hamburger" aria-label="פתיחת תפריט ניווט" aria-expanded="false" aria-controls="navMenu">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-        </button>
-
-        <nav id="navMenu" aria-label="תפריט ניווט ראשי">
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">דף הבית</a></li>
-                <li><a href="methods.html" class="nav-link active" aria-current="page">שיטות למידה</a></li>
-                <li><a href="tools.html" class="nav-link">כלים דיגיטליים</a></li>
-                <li><a href="about.html" class="nav-link">אודות</a></li>
-                <li><a href="contactUs.html" class="nav-link">צור קשר</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-
-<main id="main-content">
-
-    <nav aria-label="פירורי לחם" class="breadcrumbs-container">
-        <div class="container">
-            <ol class="breadcrumbs">
-                <li><a href="index.html" title="חזרה לדף הבית">דף הבית</a></li>
-                <li aria-current="page">שיטות למידה</li>
-            </ol>
-        </div>
-    </nav>
-
-    <section class="page-header section-gradient text-center" aria-labelledby="page-title">
-        <div class="container">
-            <h1 id="page-title" class="page-title">מעבדת היעילות: שיטות למידה</h1>
-            <p class="page-subtitle">כלים מעשיים לניהול זמן אופטימלי בסביבה האקדמית.</p>
-        </div>
-    </section>
-
-    <section id="eisenhower" class="section section-light" aria-labelledby="eisenhower-heading">
-        <div class="container">
-            <div class="section-header">
-                <h2 id="eisenhower-heading" class="section-title">מטריצת אייזנהואר האינטראקטיבית</h2>
-                <p class="section-subtitle">למדו לתעדף והתנסו בסידור משימות בזמן אמת</p>
-            </div>
-
-            <div class="eisenhower-grid-wrapper">
-
-                <div class="eisenhower-grid">
-
-                    <article class="matrix-box box-do" id="quad-1" ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <h3>רבע 1: לעשות עכשיו 🚨</h3>
-                        <div class="matrix-tag">דחוף + חשוב</div>
-                        <p>משימות קריטיות שדורשות טיפול מיידי ויש להן השלכות ישירות על ההצלחה שלכם. <strong>לדוגמה:</strong> למידה למבחן שמתקיים מחר, הגשת מטלה שהדדליין שלה הלילה.</p>
-                    </article>
-
-                    <article class="matrix-box box-delegate" id="quad-3" ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <h3>רבע 3: להאציל או למזער 🔔</h3>
-                        <div class="matrix-tag">דחוף + לא חשוב</div>
-                        <p>משימות שדורשות תשומת לב עכשיו, אבל לא באמת מקדמות את המטרות האקדמיות שלכם. <strong>לדוגמה:</strong> התראות מקבוצות וואטסאפ, שיחות טלפון לא דחופות באמצע הלמידה.</p>
-                    </article>
-
-                    <article class="matrix-box box-schedule" id="quad-2" ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <h3>רבע 2: לתזמן ביומן 📅</h3>
-                        <div class="matrix-tag">לא דחוף + חשוב</div>
-                        <p>המשימות שמקדמות אתכם לטווח הארוך ומונעות לחץ עתידי. כאן נמצאת הצמיחה האמיתית. <strong>לדוגמה:</strong> קריאת מאמרים מראש, תכנון שבוע הלמידה במוצ"ש.</p>
-                    </article>
-
-                    <article class="matrix-box box-drop" id="quad-4" ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <h3>רבע 4: למחוק לחלוטין 🗑️</h3>
-                        <div class="matrix-tag">לא דחוף + לא חשוב</div>
-                        <p>בזבזני זמן טהורים ששואבים לכם את האנרגיה. <strong>לדוגמה:</strong> גלילה אינסופית בטיקטוק בזמן למידה, צפייה בבינג' במקום לישון 7 שעות.</p>
-                    </article>
-
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="שיטות למידה מוכחות לסטודנטים: מטריצת אייזנהואר, שיטת פומודורו וטכניקות ארגון זמן להפחתת עומס.">
+        <meta name="keywords" content="שיטות למידה, מטריצת אייזנהואר, פומודורו, ניהול זמן, התנהגות ארגונית, סטודנטים">
+    
+        <title>StudySmart | שיטות למידה וניהול זמן</title>
+        <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles/style.css">
+    </head>
+    <body>
+        <header class="header">
+            <div class="container navbar">
+                <div class="logo-container">
+                    <a href="index.html" class="logo" aria-label="חזרה לדף הבית של StudySmart">
+                        <span class="logo-icon" aria-hidden="true">🎓</span>
+                        <span>StudySmart</span>
+                    </a>
                 </div>
-
-                <aside class="practice-canvas-area" aria-label="ממשק גרירת פתקים">
-                    <h3>סביבת עבודה: תרגלו תעדוף</h3>
-                    <p>הוסיפו משימה מהלו"ז שלכם וגררו אותה לרבע המתאים במטריצה:</p>
-
-                    <div class="task-input-group">
-                        <input type="text" id="newTaskInput" placeholder="מה המשימה שלך?" aria-label="הזן משימה חדשה">
-                        <button class="btn btn-secondary btn-small" onclick="addNewTask()">הוסף פתק +</button>
-                    </div>
-
-                    <div id="notesContainer" class="notes-pool" ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <div class="sticky-note" draggable="true" ondragstart="drag(event)" id="sampleNote">למידה למבחן ב-HIT</div>
-                    </div>
-                </aside>
-
+        
+                <button class="hamburger" id="hamburger" aria-label="פתיחת תפריט ניווט" aria-expanded="false" aria-controls="navMenu">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </button>
+        
+                <nav id="navMenu" aria-label="תפריט ניווט ראשי">
+                    <ul class="nav-menu">
+                        <li><a href="index.html" class="nav-link">דף הבית</a></li>
+                        <li><a href="methods.html" class="nav-link active" aria-current="page">שיטות למידה</a></li>
+                        <li><a href="tools.html" class="nav-link">כלים דיגיטליים</a></li>
+                        <li><a href="about.html" class="nav-link">אודות</a></li>
+                        <li><a href="contactUs.html" class="nav-link">צור קשר</a></li>
+                    </ul>
+                </nav>
             </div>
-        </div>
-    </section>
-
-    <section id="pomodoro" class="section section-light" aria-labelledby="pomodoro-heading">
-        <div class="container">
-            <div class="pomodoro-split-layout">
-
-                <div class="pomodoro-info-card">
-                    <h2 id="pomodoro-heading" class="section-title">שיטת פומודורו 🍅</h2>
-                    <p class="section-subtitle">ניהול זמן חכם המשלב מיקוד מקסימלי עם הפסקות מתוזמנות להפחתת עומס קוגניטיבי.</p>
-                    <br>
-                    <p>השיטה מבוססת על מחזורי עבודה של 25 דקות (הנקראים "פומודורו") ולאחריהם הפסקה קצרה של 5 דקות. לאחר 4 מחזורים, לוקחים הפסקה ארוכה יותר של 15-30 דקות. טכניקה זו מסייעת לשמור על רעננות מנטלית, מונעת שחיקה ומשפרת את הריכוז לאורך זמן.</p>
-                    <br>
-                    <h3 class="steps-title">איך זה עובד שלב אחר שלב?</h3>
-                    <ol class="steps-list">
-                        <li><strong>בחירת משימה:</strong> הגדירו מראש משימה אחת ספציפית שברצונכם לקדם.</li>
-                        <li><strong>עבודה ממוקדת:</strong> הפעילו את הטיימר ל-25 דקות ועבדו ללא שום הסחות דעת (בלי טלפון, בלי רשתות חברתיות).</li>
-                        <li><strong>הפסקה קצרה:</strong> כשהטיימר מצלצל, עצרו הכל וקחו 5 דקות להתרעננות, מתיחות או שתיית מים.</li>
-                        <li><strong>הפסקה ארוכה:</strong> לאחר השלמת 4 מחזורי למידה, קחו הפסקה ארוכה של 20-30 דקות כדי להטעין מצברים.</li>
+        </header>
+        
+        <main id="main-content">
+        
+            <nav aria-label="פירורי לחם" class="breadcrumbs-container">
+                <div class="container">
+                    <ol class="breadcrumbs">
+                        <li><a href="index.html" title="חזרה לדף הבית">דף הבית</a></li>
+                        <li aria-current="page">שיטות למידה</li>
                     </ol>
                 </div>
-
-                <div class="pomodoro-timer-card">
-                    <h3>טיימר פומודורו</h3>
-                    <p>הפעילו את הטיימר והתחילו מחזור למידה ממוקד:</p>
-
-                    <div class="pomodoro-interactive-widget">
-                        <div class="timer-wrapper">
-                            <svg class="progress-ring" width="200" height="200" aria-hidden="true">
-                                <circle class="progress-ring-bg" stroke="#f1f5f9" stroke-width="12" fill="transparent" r="88" cx="100" cy="100"></circle>
-                                <circle class="progress-ring-active" stroke="#2b5c8f" stroke-width="12" fill="transparent" r="88" cx="100" cy="100"></circle>
-                            </svg>
-
-                            <div class="timer-display" aria-live="polite" dir="ltr">
-                                <span id="minutes">25</span>:<span id="seconds">00</span>
+            </nav>
+        
+            <section class="page-header section-gradient text-center" aria-labelledby="page-title">
+                <div class="container">
+                    <h1 id="page-title" class="page-title">מעבדת היעילות: שיטות למידה</h1>
+                    <p class="page-subtitle">כלים מעשיים לניהול זמן אופטימלי בסביבה האקדמית.</p>
+                </div>
+            </section>
+        
+            <section id="eisenhower" class="section section-light" aria-labelledby="eisenhower-heading">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 id="eisenhower-heading" class="section-title">מטריצת אייזנהואר האינטראקטיבית</h2>
+                        <p class="section-subtitle">למדו לתעדף והתנסו בסידור משימות בזמן אמת</p>
+                    </div>
+        
+                    <div class="eisenhower-grid-wrapper">
+                        <div class="eisenhower-grid">
+                            <article class="matrix-box box-do" id="quad-1" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                <h3>רבע 1: לעשות עכשיו 🚨</h3>
+                                <div class="matrix-tag">דחוף + חשוב</div>
+                                <p>משימות קריטיות שדורשות טיפול מיידי ויש להן השלכות ישירות על ההצלחה שלכם. <strong>לדוגמה:</strong> למידה למבחן שמתקיים מחר, הגשת מטלה שהדדליין שלה הלילה.</p>
+                            </article>
+        
+                            <article class="matrix-box box-delegate" id="quad-3" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                <h3>רבע 3: להאציל או למזער 🔔</h3>
+                                <div class="matrix-tag">דחוף + לא חשוב</div>
+                                <p>משימות שדורשות תשומת לב עכשיו, אבל לא באמת מקדמות את המטרות האקדמיות שלכם. <strong>לדוגמה:</strong> התראות מקבוצות וואטסאפ, שיחות טלפון לא דחופות באמצע הלמידה.</p>
+                            </article>
+        
+                            <article class="matrix-box box-schedule" id="quad-2" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                <h3>רבע 2: לתזמן ביומן 📅</h3>
+                                <div class="matrix-tag">לא דחוף + חשוב</div>
+                                <p>המשימות שמקדמות אתכם לטווח הארוך ומונעות לחץ עתידי. כאן נמצאת הצמיחה האמיתית. <strong>לדוגמה:</strong> קריאת מאמרים מראש, תכנון שבוע הלמידה במוצ"ש.</p>
+                            </article>
+        
+                            <article class="matrix-box box-drop" id="quad-4" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                <h3>רבע 4: למחוק לחלוטין 🗑️</h3>
+                                <div class="matrix-tag">לא דחוף + לא חשוב</div>
+                                <p>בזבזני זמן טהורים ששואבים לכם את האנרגיה. <strong>לדוגמה:</strong> גלילה אינסופית בטיקטוק בזמן למידה, צפייה בבינג' במקום לישון 7 שעות.</p>
+                            </article>
+        
+                        </div>
+        
+                        <aside class="practice-canvas-area" aria-label="ממשק גרירת פתקים">
+                            <h3>סביבת עבודה: תרגלו תעדוף</h3>
+                            <p>הוסיפו משימה מהלו"ז שלכם וגררו אותה לרבע המתאים במטריצה:</p>
+        
+                            <div class="task-input-group">
+                                <input type="text" id="newTaskInput" placeholder="מה המשימה שלך?" aria-label="הזן משימה חדשה">
+                                <button class="btn btn-secondary btn-small" onclick="addNewTask()">הוסף פתק +</button>
                             </div>
-                        </div>
-
-                        <div class="timer-controls">
-                            <button id="startTimerBtn" class="btn btn-secondary btn-small" onclick="togglePomodoro()">התחל למידה ▶</button>
-                            <button id="resetTimerBtn" class="btn btn-outline btn-small" onclick="resetPomodoro()">איפוס ↻</button>
-                        </div>
+        
+                            <div id="notesContainer" class="notes-pool" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                <div class="sticky-note" draggable="true" ondragstart="drag(event)" id="sampleNote">למידה למבחן ב-HIT</div>
+                            </div>
+                        </aside>
+        
                     </div>
                 </div>
-
+            </section>
+        
+            <section id="pomodoro" class="section section-light" aria-labelledby="pomodoro-heading">
+                <div class="container">
+                    <div class="pomodoro-split-layout">
+        
+                        <div class="pomodoro-info-card">
+                            <h2 id="pomodoro-heading" class="section-title">שיטת פומודורו 🍅</h2>
+                            <p class="section-subtitle">ניהול זמן חכם המשלב מיקוד מקסימלי עם הפסקות מתוזמנות להפחתת עומס קוגניטיבי.</p>
+                            <br>
+                            <p>השיטה מבוססת על מחזורי עבודה של 25 דקות (הנקראים "פומודורו") ולאחריהם הפסקה קצרה של 5 דקות. לאחר 4 מחזורים, לוקחים הפסקה ארוכה יותר של 15-30 דקות. טכניקה זו מסייעת לשמור על רעננות מנטלית, מונעת שחיקה ומשפרת את הריכוז לאורך זמן.</p>
+                            <br>
+                            <h3 class="steps-title">איך זה עובד שלב אחר שלב?</h3>
+                            <ol class="steps-list">
+                                <li><strong>בחירת משימה:</strong> הגדירו מראש משימה אחת ספציפית שברצונכם לקדם.</li>
+                                <li><strong>עבודה ממוקדת:</strong> הפעילו את הטיימר ל-25 דקות ועבדו ללא שום הסחות דעת (בלי טלפון, בלי רשתות חברתיות).</li>
+                                <li><strong>הפסקה קצרה:</strong> כשהטיימר מצלצל, עצרו הכל וקחו 5 דקות להתרעננות, מתיחות או שתיית מים.</li>
+                                <li><strong>הפסקה ארוכה:</strong> לאחר השלמת 4 מחזורי למידה, קחו הפסקה ארוכה של 20-30 דקות כדי להטעין מצברים.</li>
+                            </ol>
+                        </div>
+        
+                        <div class="pomodoro-timer-card">
+                            <h3>טיימר פומודורו</h3>
+                            <p>הפעילו את הטיימר והתחילו מחזור למידה ממוקד:</p>
+        
+                            <div class="pomodoro-interactive-widget">
+                                <div class="timer-wrapper">
+                                    <svg class="progress-ring" width="200" height="200" aria-hidden="true">
+                                        <circle class="progress-ring-bg" stroke="#f1f5f9" stroke-width="12" fill="transparent" r="88" cx="100" cy="100"></circle>
+                                        <circle class="progress-ring-active" stroke="#2b5c8f" stroke-width="12" fill="transparent" r="88" cx="100" cy="100"></circle>
+                                    </svg>
+        
+                                    <div class="timer-display" aria-live="polite" dir="ltr">
+                                        <span id="minutes">25</span>:<span id="seconds">00</span>
+                                    </div>
+                                </div>
+        
+                                <div class="timer-controls">
+                                    <button id="startTimerBtn" class="btn btn-secondary btn-small" onclick="togglePomodoro()">התחל למידה ▶</button>
+                                    <button id="resetTimerBtn" class="btn btn-outline btn-small" onclick="resetPomodoro()">איפוס ↻</button>
+                                </div>
+                            </div>
+                        </div>
+        
+                    </div>
+                </div>
+            </section>
+        
+        </main>
+        
+        <footer class="footer">
+            <div class="container footer-content">
+                <div class="footer-section">
+                    <h4>StudySmart</h4>
+                    <p>הופכים את תקופת הלימודים לחכמה, יעילה ורגועה יותר עבור כל סטודנט וסטודנטית.</p>
+                </div>
+        
+                <div class="footer-section">
+                    <h4>ניווט מהיר</h4>
+                    <ul class="footer-links">
+                        <li><a href="methods.html">שיטות למידה</a></li>
+                        <li><a href="tools.html">כלים דיגיטליים</a></li>
+                        <li><a href="about.html">אודות</a></li>
+                        <li><a href="contactUs.html">צור קשר</a></li>
+                        <li><a href="sitemap.html" class="highlight-link">מפת האתר (Sitemap)</a></li>
+                    </ul>
+                </div>
+        
+                <div class="footer-section">
+                    <h4>מגישי הפרויקט</h4>
+                    <p>לירן כהן, נועה שטרנברג, מאי דנה, עמית רוט</p>
+                    <p>הפקולטה לטכנולוגיות למידה, HIT - מכון טכנולוגי חולון</p>
+                </div>
             </div>
-        </div>
-    </section>
-
-</main>
-
-<footer class="footer">
-    <div class="container footer-content">
-        <div class="footer-section">
-            <h4>StudySmart</h4>
-            <p>הופכים את תקופת הלימודים לחכמה, יעילה ורגועה יותר עבור כל סטודנט וסטודנטית.</p>
-        </div>
-
-        <div class="footer-section">
-            <h4>ניווט מהיר</h4>
-            <ul class="footer-links">
-                <li><a href="methods.html">שיטות למידה</a></li>
-                <li><a href="tools.html">כלים דיגיטליים</a></li>
-                <li><a href="about.html">אודות</a></li>
-                <li><a href="contactUs.html">צור קשר</a></li>
-                <li><a href="sitemap.html" class="highlight-link">מפת האתר (Sitemap)</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-section">
-            <h4>מגישי הפרויקט</h4>
-            <p>לירן כהן, נועה שטרנברג, מאי דנה, עמית רוט</p>
-            <p>הפקולטה לטכנולוגיות למידה, HIT - מכון טכנולוגי חולון</p>
-        </div>
-    </div>
-
-    <div class="footer-bottom text-center">
-        <p>&copy; 2026 | מוגש כמטלה מסכמת בקורס פיתוח אתרי אינטרנט | נבנה בהתאם לתקן WCAG 2.1</p>
-    </div>
-</footer>
-<script src="jScripts/script.js"></script>
-</body>
+        
+            <div class="footer-bottom text-center">
+                <p>&copy; 2026 | מוגש כמטלה מסכמת בקורס פיתוח אתרי אינטרנט | נבנה בהתאם לתקן WCAG 2.1</p>
+            </div>
+        </footer>
+        
+        <script src="jScripts/script.js"></script>
+    </body>
 </html>

@@ -15,33 +15,35 @@
     
         <link rel="stylesheet" href="styles/style.css">
     </head>
+    
     <body>
         <header class="header">
-        <div class="container navbar">
-            <div class="logo-container">
-                <a href="index.html" class="logo" aria-label="חזרה לדף הבית של StudySmart">
-                    <span class="logo-icon" aria-hidden="true">🎓</span>
-                    <span>StudySmart</span>
-                </a>
+            <div class="container navbar">
+                <div class="logo-container">
+                    <a href="index.html" class="logo" aria-label="חזרה לדף הבית של StudySmart">
+                        <span class="logo-icon" aria-hidden="true">🎓</span>
+                        <span>StudySmart</span>
+                    </a>
+                </div>
+        
+                <button class="hamburger" id="hamburger" aria-label="פתיחת תפריט ניווט" aria-expanded="false" aria-controls="navMenu">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </button>
+        
+                <nav id="navMenu" aria-label="תפריט ניווט ראשי">
+                    <ul class="nav-menu">
+                        <li><a href="index.html" class="nav-link">דף הבית</a></li>
+                        <li><a href="methods.html" class="nav-link">שיטות למידה</a></li>
+                        <li><a href="tools.html" class="nav-link">כלים דיגיטליים</a></li>
+                        <li><a href="about.html" class="nav-link active" aria-current="page">אודות</a></li>
+                        <li><a href="contactUs.html" class="nav-link">צור קשר</a></li>
+                    </ul>
+                </nav>
             </div>
-    
-            <button class="hamburger" id="hamburger" aria-label="פתיחת תפריט ניווט" aria-expanded="false" aria-controls="navMenu">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </button>
-    
-            <nav id="navMenu" aria-label="תפריט ניווט ראשי">
-                <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link">דף הבית</a></li>
-                    <li><a href="methods.html" class="nav-link">שיטות למידה</a></li>
-                    <li><a href="tools.html" class="nav-link">כלים דיגיטליים</a></li>
-                    <li><a href="about.html" class="nav-link active" aria-current="page">אודות</a></li>
-                    <li><a href="contactUs.html" class="nav-link">צור קשר</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+        </header>
+        
         <main id="main-content">
             <nav aria-label="פירורי לחם" class="breadcrumbs-container">
                 <div class="container">
@@ -128,6 +130,7 @@
                 </div>
             </section>
         </main>
+        
         <footer class="footer">
             <div class="container footer-content">
                 <div class="footer-section">
@@ -157,6 +160,7 @@
                 <p>&copy; 2026 | מוגש כמטלה מסכמת בקורס פיתוח אתרי אינטרנט | נבנה בהתאם לתקן WCAG 2.1</p>
             </div>
         </footer>
+        
         <script src="jScripts/script.js"></script>
     </body>
 </html>
