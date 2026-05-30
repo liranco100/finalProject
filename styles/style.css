@@ -62,12 +62,6 @@ a:hover {
    2. נגישות ועזרי תצוגה (Accessibility & Utilities)
    ========================================================================== */
 
-/* הצגת כפתור הדילוג ברגע שהוא מקבל פוקוס מהמקלדת (Tab) */
-.skip-to-main:focus {
-    opacity: 1;
-    pointer-events: auto;
-}
-
 /* עיצוב מסגרת בולטת (Focus Ring) לכל האלמנטים האינטראקטיביים בזמן ניווט מקלדת */
 a:focus, button:focus, input:focus, textarea:focus {
     outline: 3px solid var(--focus-color);
