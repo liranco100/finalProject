@@ -4,41 +4,27 @@
 
 /* הגדרת משתני CSS גלובליים לשימוש חוזר בכל האתר */
 :root {
-    /* צבע ראשי - כחול כהה */
-    --primary-color: #2b5c8f;
-    /* צבע ראשי בהיר - כחול בהיר */
-    --primary-light: #4a80b8;
-    /* צבע משני - כתום חם */
-    --secondary-color: #e67e22;
-    /* צבע רקע כללי של האתר - כחלחל בהיר מאד */
-    --background-light: #f8fbff;
-    /* צבע טקסט ראשי - שחור/אפור כהה */
-    --text-main: #333333;
-    /* צבע טקסט משני/עמום - אפור */
-    --text-muted: #666666;
-    /* צבע לבן נקי */
     --white: #ffffff;
-    /* צבע חיווי פוקוס נגישות - צהוב/כתום בהיר */
-    --focus-color: #ffb84d;
-    /* גראדיאנט (מעבר צבעים) לטיפ היומי - סגול */
-    --tip-gradient: linear-gradient(135deg, #4b377c 0%, #6c5ce7 100%);
-    /* מרווחים קבועים - אקסטרה קטן */
-    --spacing-xs: 0.5rem;
-    /* מרווחים קבועים - קטן */
-    --spacing-sm: 1rem;
-    /* מרווחים קבועים - בינוני */
-    --spacing-md: 1.5rem;
-    /* מרווחים קבועים - גדול */
-    --spacing-lg: 2rem;
-    /* מרווחים קבועים - אקסטרה גדול */
-    --spacing-xl: 3rem;
-    /* מעבר מהיר של אנימציה */
-    --transition-fast: 0.2s ease;
-    /* מעבר חלק ומורכב של אנימציה */
-    --transition-smooth: 0.4s ease-in-out;
+    --primary-color: #2b5c8f;   /* צבע ראשי - כחול כהה */
+    --primary-light: #4a80b8; /* צבע ראשי בהיר - כחול בהיר */
+    --secondary-color: #e67e22; /* צבע משני - כתום חם */
+    --background-light: #f8fbff; /* צבע רקע כללי של האתר - כחלחל בהיר מאד */
+    --text-main: #333333; /* צבע טקסט ראשי - אפור כהה */
+    --text-muted: #666666; /* צבע טקסט משני/עמום - אפור */
+    --focus-color: #ffb84d; /* צבע חיווי פוקוס נגישות - כתום בהיר */
+   
+    --tip-gradient: linear-gradient(135deg, #4b377c 0%, #6c5ce7 100%); /* גראדיאנט לטיפ היומי - סגול */
+
+    --spacing-xs: 0.5rem;    /* מרווחים קבועים - אקסטרה קטן */
+    --spacing-sm: 1rem;    /* מרווחים קבועים - קטן */
+    --spacing-md: 1.5rem;  /* מרווחים קבועים - בינוני */
+    --spacing-lg: 2rem;    /* מרווחים קבועים - גדול */
+    --spacing-xl: 3rem;    /* מרווחים קבועים - אקסטרה גדול */
+    --transition-fast: 0.2s ease;    /* מעבר מהיר של אנימציה */
+    --transition-smooth: 0.4s ease-in-out;    /* מעבר חלק ומורכב של אנימציה */
 }
 
-/* איפוס גלובלי של שוליים וריפודים לכל האלמנטים בדף */
+/* איפוס גלובלי של שוליים  לכל האלמנטים בדף */
 * {
     margin: 0;
     padding: 0;
@@ -47,70 +33,34 @@
 
 /* הגדרות בסיס עבור גוף האתר (Body) */
 body {
-    /* הגדרת גופן רוביק כברירת מחדל */
-    font-family: 'Rubik', sans-serif;
-    /* צבע הרקע של האתר */
-    background-color: var(--background-light);
-    /* צבע הגופן הראשי */
-    color: var(--text-main);
-    /* מרווח בין שורות הטקסט לקריאות מקסימלית */
-    line-height: 1.6;
-    /* מניעת גלילה אופקית מיותרת */
-    overflow-x: hidden;
-    /* סמן עכבר רגיל כברירת מחדל */
-    cursor: default;
+    font-family: 'Rubik', sans-serif;  /* הגדרת גופן רוביק כברירת מחדל */
+    background-color: var(--background-light); /* צבע הרקע של האתר */
+    color: var(--text-main); /* צבע הגופן הראשי */
+    line-height: 1.6; /* מרווח בין שורות הטקסט לקריאות מקסימלית */
+    overflow-x: hidden;  /* מניעת גלילה אופקית מיותרת */
+    cursor: default; /* סמן עכבר רגיל כברירת מחדל */
 }
 
 /* הגדרת סגנון אחיד לכל כותרות האתר */
 h1, h2, h3, h4 {
-    /* עובי גופן מודגש */
     font-weight: 700;
-    /* גובה השורה של הכותרת */
     line-height: 1.2;
-    /* צבע הכותרת כברירת מחדל */
     color: var(--primary-color);
 }
 
-/* הגדרת סגנון בסיסי לקישורים (Anchors) */
+/* הגדרת סגנון בסיסי לקישורים */
 a {
-    /* הסרת קו תחתון מובנה */
     text-decoration: none;
-    /* צבע הקישור הדיפולטי */
     color: var(--primary-color);
-    /* אפקט מעבר חלק בעת שינוי צבע */
     transition: color var(--transition-fast);
 }
-
-/* שינוי צבע הקישור בזמן ריחוף עכבר (Hover) */
 a:hover {
     color: var(--secondary-color);
-}
-
-/* מחלקת עזר למרכוז טקסט בצורה מהירה */
-.text-center {
-    text-align: center;
 }
 
 /* ==========================================================================
    2. נגישות ועזרי תצוגה (Accessibility & Utilities)
    ========================================================================== */
-
-/* עיצוב כפתור "דלג לתוכן המרכזי" עבור משתמשי מקלדת (קריטי לנגישות) */
-.skip-to-main {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: var(--primary-color);
-    color: var(--white);
-    padding: var(--spacing-sm) var(--spacing-lg);
-    /* הגנה שהכפתור תמיד יהיה בשכבה העליונה ביותר */
-    z-index: 9999;
-    /* הסתרה ויזואלית מוחלטת מהמסך כשאינו בפוקוס */
-    opacity: 0;
-    /* מניעת אינטראקציה כל עוד הוא מוסתר */
-    pointer-events: none;
-    font-weight: 600;
-}
 
 /* הצגת כפתור הדילוג ברגע שהוא מקבל פוקוס מהמקלדת (Tab) */
 .skip-to-main:focus {
@@ -181,9 +131,7 @@ main > section {
 /* עיצוב קופסת הניווט הראשית בראש העמוד */
 .header {
     background-color: var(--white);
-    /* יצירת צל עדין מתחת לניווט */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    /* קיבוע התפריט בראש העמוד בזמן גלילה */
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -253,15 +201,12 @@ main > section {
 }
 
 /* --- Footer --- */
-
-/* עיצוב קופסת חלק תחתון של האתר (Footer) */
 .footer {
     background-color: var(--primary-color);
     color: var(--white);
     padding: var(--spacing-xl) 0 var(--spacing-sm);
 }
 
-/* עיצוב הכותרות בתוך הפוטר */
 .footer h4 {
     color: var(--focus-color);
     margin-bottom: var(--spacing-sm);
@@ -275,23 +220,25 @@ main > section {
     margin-bottom: var(--spacing-lg);
 }
 
-/* רשימות הקישורים בפוטר */
+.footer-section
+{
+    text-align: right;
+}
+
+
 .footer-links {
     list-style: none;
 }
 
-/* מרווח בין שורות הקישורים בפוטר */
 .footer-links li {
     margin-bottom: var(--spacing-xs);
 }
 
-/* עיצוב צבע הקישורים בפוטר */
 .footer-links a {
     color: var(--white);
     opacity: 0.8;
 }
 
-/* שינוי צבע הקישורים בפוטר בריחוף או קישורים מודגשים (כמו מפת אתר) */
 .footer-links a:hover, .footer-links .highlight-link {
     opacity: 1;
     color: var(--focus-color);
@@ -303,6 +250,7 @@ main > section {
     padding-top: var(--spacing-md);
     font-size: 0.9rem;
     opacity: 0.7;
+    text-align: center;
 }
 
 /* ==========================================================================
@@ -356,7 +304,6 @@ main > section {
 .breadcrumbs-container {
     background-color: rgba(0, 0, 0, 0.02);
     padding: var(--spacing-sm) 0;
-    border-bottom: 1px solid var(--primary-light);
 }
 
 /* רשימת פירורי הלחם */
@@ -373,7 +320,7 @@ main > section {
     align-items: center;
 }
 
-/* הוספת תו מפריד (לוכסן) בין פירורי הלחם, למעט האיבר האחרון */
+/* הוספת תו מפריד בין פירורי הלחם, למעט האיבר האחרון */
 .breadcrumbs li:not(:last-child)::after {
     content: '/';
     margin-right: var(--spacing-sm);
@@ -402,6 +349,7 @@ main > section {
 .page-header {
     padding: var(--spacing-xl) 0;
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+    text-align: center;
 }
 
 /* עיצוב הגופן של כותרת העמוד הפנימי */
@@ -417,7 +365,7 @@ main > section {
     color: rgba(255, 255, 255, 0.9);
 }
 
-/* --- Forms (Global Form Styles) --- */
+/* --- Forms --- */
 
 /* קבוצת שדה טופס - מסדרת את הלייבל והאינפוט אחד מעל השני */
 .form-group {
@@ -467,8 +415,6 @@ main > section {
    ========================================================================== */
 
 /* --- Hero --- */
-
-/* אזור ההצגה הראשי של עמוד הבית (תמונת רקע וגובה) */
 .hero {
     text-align: center;
     padding: 80px 0;
@@ -528,23 +474,19 @@ main > section {
     border-radius: 12px;
     text-align: center;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    /* פס עליון מעוצב בצבע המותג */
     border-top: 4px solid var(--primary-light);
     transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
 }
 
-/* האייקון/אימוג'י הגדול בראש כרטיסיית הפיצ'ר */
 .card-icon {
     font-size: 3rem;
     margin-bottom: var(--spacing-md);
 }
 
-/* מרווח מתחת לכותרת הכרטיסייה */
 .feature-card h3 {
     margin-bottom: var(--spacing-sm);
 }
 
-/* עיצוב פסקת התיאור של הכרטיסייה ודחיפת הכפתור לתחתית */
 .feature-card p {
     flex-grow: 1;
     color: var(--text-muted);
@@ -553,13 +495,11 @@ main > section {
 
 /* --- Sound Lab --- */
 
-/* רקע ייחודי לסקשן מעבדת הסאונד */
 .section-sounds {
     background-color: var(--background-light);
     border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-/* רשת הגריד להצגת כרטיסיות הסאונד */
 .sounds-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -574,11 +514,9 @@ main > section {
     text-align: center;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
     transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-    /* קו תחתון דקורטיבי */
     border-bottom: 4px solid var(--primary-light);
 }
 
-/* קופסת האימוג'י הגדול של כרטיסיית הסאונד */
 .sound-icon {
     font-size: 3.5rem;
     margin-bottom: var(--spacing-md);
@@ -586,13 +524,11 @@ main > section {
     padding: var(--spacing-sm);
 }
 
-/* כותרת הסאונד */
 .sound-content h3 {
     margin-bottom: var(--spacing-sm);
     font-size: 1.4rem;
 }
 
-/* פירוט קצר על סוג הסאונד */
 .sound-content p {
     color: var(--text-muted);
     margin-bottom: var(--spacing-lg);
@@ -600,8 +536,6 @@ main > section {
 }
 
 /* --- Tip of the Day (Aside) --- */
-
-/* עיצוב בלוק הטיפ היומי (רכיב צדדי/Aside) */
 .tip-of-the-day {
     background: var(--tip-gradient);
     color: var(--white);
@@ -628,7 +562,7 @@ main > section {
 }
 
 /* ==========================================================================
-   6. עמוד פנימי: שיטות למידה (Methods Page)
+   6. עמוד שיטות למידה (Methods Page)
    ========================================================================== */
 
 /* --- מטריצת אייזנהואר --- */
@@ -705,8 +639,6 @@ main > section {
 }
 
 /* --- סביבת תרגול ופתקיות --- */
-
-/* אזור לוח העבודה/קנבס של גרירת המשימות */
 .practice-canvas-area {
     background-color: #fcfcfc;
     border: 2px dashed var(--primary-light);
@@ -749,7 +681,6 @@ main > section {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* פס תחתון כהה יותר לקבלת תלת מימד */
     border-bottom: 2px solid #e1d48c;
 }
 
@@ -816,7 +747,7 @@ main > section {
     transform: rotate(270deg);
 }
 
-/* פס התקדמות אדום חי של שעון הפומודורו */
+/* פס התקדמות חי של שעון הפומודורו */
 .progress-ring-active {
     stroke-dasharray: 553;
     stroke-dashoffset: 0;
@@ -1067,12 +998,10 @@ main > section {
 }
 
 /* ==========================================================================
-   8. עמודים פנימיים נוספים (About, Contact & Sitemap)
+   8. עמוד אודות (about.html) 
    ========================================================================== */
 
-/* --- אודות (About Page) --- */
-
-/* קופסת סיפור הרקע של המיזם עם פס שמאלי מעוצב */
+/* קופסת סיפור */
 .about-story-block {
     max-width: 850px;
     margin: 0 auto;
@@ -1083,7 +1012,6 @@ main > section {
     border-left: 5px solid var(--primary-color);
 }
 
-/* עיצוב פסקאות הסיפור (יישור טקסט דו-צדדי לקריאות אקדמית) */
 .story-content p {
     font-size: 1.1rem;
     color: var(--text-main);
@@ -1091,7 +1019,6 @@ main > section {
     text-align: justify;
 }
 
-/* הדגשות טקסט בתוך הסיפור בצבע המותג */
 .story-content strong {
     color: var(--primary-color);
 }
@@ -1122,7 +1049,7 @@ main > section {
     transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
-/* אזור האוזניות/אוואטר האימוג'י של המפתח */
+/* אזור האימוג'י של המפתח */
 .team-avatar {
     font-size: 3rem;
     margin-bottom: var(--spacing-sm);
@@ -1159,6 +1086,7 @@ main > section {
     border-top: 1px solid rgba(0, 0, 0, 0.08);
     color: var(--text-muted);
     font-size: 1rem;
+    text-align: center;
 }
 
 /* צבע הדגשת הטקסט בקונטקסט האקדמי */
@@ -1166,9 +1094,11 @@ main > section {
     color: var(--text-main);
 }
 
-/* --- צור קשר (Contact Page) --- */
 
-/* מעטפת עמוד צור קשר (חלוקה של 2 שלישים לטופס, ושליש אחד לפרטי המוסד) */
+/* ==========================================================================
+   9. עמוד צור קשר (contactUs.html) 
+   ========================================================================== */
+
 .contact-wrapper {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -1177,7 +1107,7 @@ main > section {
     margin: 0 auto;
 }
 
-/* קופסת מיכל הטופס הלבנה */
+/* קופסת הטופס  */
 .contact-form-container {
     background-color: var(--white);
     padding: var(--spacing-xl);
@@ -1206,7 +1136,7 @@ main > section {
     gap: var(--spacing-lg);
 }
 
-/* כרטיסיית מידע בודדת (פרטי פקולטה / צוות) עם קו ימני כתום */
+/* כרטיסיית מידע בודדת */
 .info-card {
     background-color: var(--white);
     padding: var(--spacing-lg);
@@ -1259,7 +1189,9 @@ main > section {
     font-weight: bold;
 }
 
-/* --- מפת האתר (Sitemap) --- */
+/* ==========================================================================
+   10. עמוד מפת האתר (sitemap.html) 
+   ========================================================================== */
 
 /* קופסת המעטפת של מפת האתר */
 .sitemap-container {
@@ -1334,7 +1266,10 @@ main > section {
     pointer-events: none;
 }
 
-/* --- אפקטי ריחוף ואנימציות קבועות --- */
+
+/* ==========================================================================
+   11. אפקטי ריחוף ואנימציות קבועות
+   ========================================================================== */
 
 /* מעטפת חץ הגלילה האלגנטי בהירו */
 .scroll-indicator {
@@ -1381,7 +1316,7 @@ main > section {
 
 
 /* ==========================================================================
-   9. רספונסיביות ומדיה קוויריז (All Media Queries - Consolidated)
+   12. רספונסיביות ומדיה קוויריז (All Media Queries - Consolidated)
    ========================================================================== */
 
 /* --- טאבלטים ומסכים בינוניים (נקודת שבירה: 992 פיקסלים ומטה) --- */
