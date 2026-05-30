@@ -215,15 +215,38 @@
     <section id="quizlet-section" class="section section-light" aria-labelledby="quizlet-heading">
         <div class="container">
             <div class="quizlet-banner-box">
+
+                <!-- צד ימין: תוכן, טקסטים וכפתור -->
                 <div class="quizlet-info">
                     <div class="tool-badge">שינון וכרטיסיות</div>
                     <h2 id="quizlet-heading">שינון חומר עם Quizlet</h2>
                     <p>הפלטפורמה המובילה ללמידה באמצעות כרטיסיות. בפלטפורמה זו תוכלו גם לבחון את עצמכם או לתרגל את החומר. בנה סטים משלך או השתמש בסטים קיימים של סטודנטים ב-HIT כדי להתכונן למבחנים.</p>
                     <a href="https://quizlet.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" aria-label="מעבר לאתר קוויזלט">התחילו לשנן ב-Quizlet ↗</a>
                 </div>
-                <div class="quizlet-visual-container" aria-hidden="true">
+
+                <!-- צד שמאל: אלמנטים ויזואליים (הלוגו והכרטיסייה מעובדים יחד בצורה הרמונית) -->
+                <div class="quizlet-visual-side">
+                    <!-- הלוגו המקורקע מעל הכרטיסייה -->
                     <img src="img/Quizlet.png" alt="לוגו קוויזלט" class="quizlet-main-logo">
+
+                    <!-- רכיב אינטראקטיבי -->
+                    <div class="quizlet-interactive-demo">
+                        <p class="demo-instruction">לחצו על הכרטיסייה כדי לראות איך זה עובד:</p>
+                        <button class="flashcard" id="demoFlashcard" aria-live="polite" aria-label="כרטיסיית שינון. צד א': מונח באנגלית. לחצו לחשיפת הפירוש.">
+                            <div class="flashcard-inner">
+                                <div class="flashcard-front">
+                                    <span class="card-lang">מושג</span>
+                                    <div class="card-text">Active Learning</div>
+                                </div>
+                                <div class="flashcard-back">
+                                    <span class="card-lang">פירוש</span>
+                                    <div class="card-text">למידה פעילה (תרגול, מעורבות ויישום)</div>
+                                </div>
+                            </div>
+                        </button>
+                    </div>
                 </div>
+
             </div>
         </div>
     </section>

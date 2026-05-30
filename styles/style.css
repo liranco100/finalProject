@@ -1,56 +1,92 @@
 ﻿/* ==========================================================================
    1. משתנים גלובליים והגדרות בסיס (Variables & Reset)
    ========================================================================== */
+
+/* הגדרת משתני CSS גלובליים לשימוש חוזר בכל האתר */
 :root {
+    /* צבע ראשי - כחול כהה */
     --primary-color: #2b5c8f;
+    /* צבע ראשי בהיר - כחול בהיר */
     --primary-light: #4a80b8;
+    /* צבע משני - כתום חם */
     --secondary-color: #e67e22;
+    /* צבע רקע כללי של האתר - כחלחל בהיר מאד */
     --background-light: #f8fbff;
+    /* צבע טקסט ראשי - שחור/אפור כהה */
     --text-main: #333333;
+    /* צבע טקסט משני/עמום - אפור */
     --text-muted: #666666;
+    /* צבע לבן נקי */
     --white: #ffffff;
+    /* צבע חיווי פוקוס נגישות - צהוב/כתום בהיר */
     --focus-color: #ffb84d;
+    /* גראדיאנט (מעבר צבעים) לטיפ היומי - סגול */
     --tip-gradient: linear-gradient(135deg, #4b377c 0%, #6c5ce7 100%);
+    /* מרווחים קבועים - אקסטרה קטן */
     --spacing-xs: 0.5rem;
+    /* מרווחים קבועים - קטן */
     --spacing-sm: 1rem;
+    /* מרווחים קבועים - בינוני */
     --spacing-md: 1.5rem;
+    /* מרווחים קבועים - גדול */
     --spacing-lg: 2rem;
+    /* מרווחים קבועים - אקסטרה גדול */
     --spacing-xl: 3rem;
+    /* מעבר מהיר של אנימציה */
     --transition-fast: 0.2s ease;
+    /* מעבר חלק ומורכב של אנימציה */
     --transition-smooth: 0.4s ease-in-out;
 }
 
+/* איפוס גלובלי של שוליים וריפודים לכל האלמנטים בדף */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* הגדרות בסיס עבור גוף האתר (Body) */
 body {
+    /* הגדרת גופן רוביק כברירת מחדל */
     font-family: 'Rubik', sans-serif;
+    /* צבע הרקע של האתר */
     background-color: var(--background-light);
+    /* צבע הגופן הראשי */
     color: var(--text-main);
+    /* מרווח בין שורות הטקסט לקריאות מקסימלית */
     line-height: 1.6;
+    /* מניעת גלילה אופקית מיותרת */
     overflow-x: hidden;
+    /* סמן עכבר רגיל כברירת מחדל */
     cursor: default;
 }
 
+/* הגדרת סגנון אחיד לכל כותרות האתר */
 h1, h2, h3, h4 {
+    /* עובי גופן מודגש */
     font-weight: 700;
+    /* גובה השורה של הכותרת */
     line-height: 1.2;
+    /* צבע הכותרת כברירת מחדל */
     color: var(--primary-color);
 }
 
+/* הגדרת סגנון בסיסי לקישורים (Anchors) */
 a {
+    /* הסרת קו תחתון מובנה */
     text-decoration: none;
+    /* צבע הקישור הדיפולטי */
     color: var(--primary-color);
+    /* אפקט מעבר חלק בעת שינוי צבע */
     transition: color var(--transition-fast);
 }
 
+/* שינוי צבע הקישור בזמן ריחוף עכבר (Hover) */
 a:hover {
     color: var(--secondary-color);
 }
 
+/* מחלקת עזר למרכוז טקסט בצורה מהירה */
 .text-center {
     text-align: center;
 }
@@ -58,6 +94,8 @@ a:hover {
 /* ==========================================================================
    2. נגישות ועזרי תצוגה (Accessibility & Utilities)
    ========================================================================== */
+
+/* עיצוב כפתור "דלג לתוכן המרכזי" עבור משתמשי מקלדת (קריטי לנגישות) */
 .skip-to-main {
     position: absolute;
     top: 0;
@@ -65,23 +103,28 @@ a:hover {
     background-color: var(--primary-color);
     color: var(--white);
     padding: var(--spacing-sm) var(--spacing-lg);
+    /* הגנה שהכפתור תמיד יהיה בשכבה העליונה ביותר */
     z-index: 9999;
+    /* הסתרה ויזואלית מוחלטת מהמסך כשאינו בפוקוס */
     opacity: 0;
+    /* מניעת אינטראקציה כל עוד הוא מוסתר */
     pointer-events: none;
-    text-decoration: none;
     font-weight: 600;
 }
 
+/* הצגת כפתור הדילוג ברגע שהוא מקבל פוקוס מהמקלדת (Tab) */
 .skip-to-main:focus {
     opacity: 1;
     pointer-events: auto;
 }
 
+/* עיצוב מסגרת בולטת (Focus Ring) לכל האלמנטים האינטראקטיביים בזמן ניווט מקלדת */
 a:focus, button:focus, input:focus, textarea:focus {
     outline: 3px solid var(--focus-color);
     outline-offset: 4px;
 }
 
+/* מחלקה להסתרת אלמנטים ויזואלית מהמסך, אך השארתם זמינים לקוראי מסך (Screen Readers) */
 .visual-hidden {
     position: absolute;
     width: 1px;
@@ -94,8 +137,10 @@ a:focus, button:focus, input:focus, textarea:focus {
 }
 
 /* ==========================================================================
-   3. מבנה גלובלי (Layout, Header & Footer)
+   3. מבנה גלובלי ומעטפת (Global Layout, Header & Footer)
    ========================================================================== */
+
+/* קופסת המעטפת המרכזית להגבלת רוחב התוכן באתר ויישורו לאמצע */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -103,38 +148,48 @@ a:focus, button:focus, input:focus, textarea:focus {
     width: 100%;
 }
 
+/* קביעת ריפוד אנכי קבוע לכל הסקשנים תחת התגית הראשית */
 main > section {
     padding: var(--spacing-xl) 0;
 }
 
+/* מחלקת רקע לבן עבור סקשנים בהירים */
 .section-light {
     background-color: var(--white);
 }
 
+/* עיצוב בלוק הכותרת בראש כל סקשן */
 .section-header {
     text-align: center;
     margin-bottom: var(--spacing-xl);
 }
 
+/* עיצוב גודל הכותרת המרכזית של הסקשן */
 .section-title {
     font-size: 2.5rem;
     margin-bottom: var(--spacing-xs);
 }
 
+/* עיצוב כותרת המשנה הקטנה של הסקשן */
 .section-subtitle {
     font-size: 1.2rem;
     color: var(--text-muted);
 }
 
 /* --- Header & Navbar --- */
+
+/* עיצוב קופסת הניווט הראשית בראש העמוד */
 .header {
     background-color: var(--white);
+    /* יצירת צל עדין מתחת לניווט */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    /* קיבוע התפריט בראש העמוד בזמן גלילה */
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
+/* סידור פנימי של תפריט הניווט (לוגו בצד אחד, קישורים בצד שני) */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -142,11 +197,13 @@ main > section {
     height: 80px;
 }
 
+/* קופסת המעטפת של הלוגו */
 .logo-container {
     font-size: 1.8rem;
     margin: 0;
 }
 
+/* עיצוב הלוגו הטקסטואלי עם האייקון */
 .logo {
     display: flex;
     align-items: center;
@@ -154,23 +211,27 @@ main > section {
     font-weight: 700;
 }
 
+/* רשימת קישורי הניווט */
 .nav-menu {
     display: flex;
     list-style: none;
     gap: var(--spacing-lg);
 }
 
+/* עיצוב קישורי הניווט הסטנדרטיים */
+.nav-link {
+    font-weight: 500;
+    padding: var(--spacing-xs) 0;
+}
+
+/* עיצוב ייחודי ובולט לקישור של העמוד הנוכחי שבו נמצא המשתמש */
 .nav-link[aria-current="page"] {
     color: var(--secondary-color);
     font-weight: 700;
     border-bottom: 2px solid var(--secondary-color);
 }
 
-.nav-link {
-    font-weight: 500;
-    padding: var(--spacing-xs) 0;
-}
-
+/* כפתור המבורגר למובייל (מוסתר כברירת מחדל במסכי מחשב) */
 .hamburger {
     display: none;
     background: none;
@@ -181,6 +242,7 @@ main > section {
     padding: 5px;
 }
 
+/* עיצוב שלושת הפסים בתוך תפריט ההמבורגר */
 .hamburger span {
     display: block;
     width: 25px;
@@ -191,17 +253,21 @@ main > section {
 }
 
 /* --- Footer --- */
+
+/* עיצוב קופסת חלק תחתון של האתר (Footer) */
 .footer {
     background-color: var(--primary-color);
     color: var(--white);
     padding: var(--spacing-xl) 0 var(--spacing-sm);
 }
 
+/* עיצוב הכותרות בתוך הפוטר */
 .footer h4 {
     color: var(--focus-color);
     margin-bottom: var(--spacing-sm);
 }
 
+/* פריסת הגריד הפנימית של מדורי הפוטר */
 .footer-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -209,24 +275,29 @@ main > section {
     margin-bottom: var(--spacing-lg);
 }
 
+/* רשימות הקישורים בפוטר */
 .footer-links {
     list-style: none;
 }
 
+/* מרווח בין שורות הקישורים בפוטר */
 .footer-links li {
     margin-bottom: var(--spacing-xs);
 }
 
+/* עיצוב צבע הקישורים בפוטר */
 .footer-links a {
     color: var(--white);
     opacity: 0.8;
 }
 
+/* שינוי צבע הקישורים בפוטר בריחוף או קישורים מודגשים (כמו מפת אתר) */
 .footer-links a:hover, .footer-links .highlight-link {
     opacity: 1;
     color: var(--focus-color);
 }
 
+/* פס זכויות יוצרים בתחתית הפוטר */
 .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: var(--spacing-md);
@@ -237,7 +308,10 @@ main > section {
 /* ==========================================================================
    4. רכיבי UI קבועים (Components)
    ========================================================================== */
+
 /* --- Buttons --- */
+
+/* עיצוב בסיסי אחיד לכל הכפתורים באתר */
 .btn {
     display: inline-block;
     padding: var(--spacing-sm) var(--spacing-lg);
@@ -249,23 +323,27 @@ main > section {
     border: 2px solid transparent;
 }
 
+/* וריאציה של כפתור קטן (לשימוש בתוך כרטיסיות כלים) */
 .btn-small {
     padding: 0.4rem 1.2rem;
     font-size: 0.9rem;
 }
 
+/* כפתור בעיצוב צבע ראסי (כחול עם צל) */
 .btn-primary {
     background-color: var(--primary-color);
     color: var(--white);
     box-shadow: 0 4px 10px rgba(43, 92, 143, 0.3);
 }
 
+/* כפתור בעיצוב צבע משני (כתום עם צל) */
 .btn-secondary {
     background-color: var(--secondary-color);
     color: var(--white);
     box-shadow: 0 4px 10px rgba(230, 126, 34, 0.3);
 }
 
+/* כפתור בעיצוב קו מתאר בלבד (רקע שקוף ומסגרת כחולה) */
 .btn-outline {
     background-color: transparent;
     color: var(--primary-color);
@@ -273,12 +351,15 @@ main > section {
 }
 
 /* --- Breadcrumbs --- */
+
+/* בר פירורי הלחם לניווט היררכי מתחת להדר */
 .breadcrumbs-container {
     background-color: rgba(0, 0, 0, 0.02);
     padding: var(--spacing-sm) 0;
     border-bottom: 1px solid var(--primary-light);
 }
 
+/* רשימת פירורי הלחם */
 .breadcrumbs {
     list-style: none;
     display: flex;
@@ -286,65 +367,79 @@ main > section {
     font-size: 0.9rem;
 }
 
+/* יישור האלמנטים ברשימה באופן אנכי */
 .breadcrumbs li {
     display: flex;
     align-items: center;
 }
 
+/* הוספת תו מפריד (לוכסן) בין פירורי הלחם, למעט האיבר האחרון */
 .breadcrumbs li:not(:last-child)::after {
     content: '/';
     margin-right: var(--spacing-sm);
     color: var(--text-muted);
 }
 
+/* צבע הקישורים בפירורי הלחם */
 .breadcrumbs a {
     color: var(--text-muted);
 }
 
+/* אפקט ריחוף על פירורי הלחם */
 .breadcrumbs a:hover {
     color: var(--primary-color);
 }
 
+/* עיצוב הפריט האחרון המציין את העמוד הנוכחי בפירורי הלחם */
 .breadcrumbs li[aria-current="page"] {
     font-weight: 600;
     color: var(--primary-color);
 }
 
 /* --- Page Headers --- */
+
+/* עיצוב בלוק כותרת העמוד המרכזית (לראש עמודים פנימיים עם גראדיאנט כחול) */
 .page-header {
     padding: var(--spacing-xl) 0;
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
 }
 
+/* עיצוב הגופן של כותרת העמוד הפנימי */
 .page-title {
     font-size: 3rem;
     color: var(--white);
     margin-bottom: var(--spacing-sm);
 }
 
+/* עיצוב כותרת המשנה הלבנה בראש עמוד פנימי */
 .page-subtitle {
     font-size: 1.2rem;
     color: rgba(255, 255, 255, 0.9);
 }
 
-/* --- Forms (Global styles derived from contact form) --- */
+/* --- Forms (Global Form Styles) --- */
+
+/* קבוצת שדה טופס - מסדרת את הלייבל והאינפוט אחד מעל השני */
 .form-group {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-xs);
 }
 
+/* עיצוב כותרת השדה (Label) בטופס */
 .form-group label {
     font-weight: 600;
     font-size: 0.95rem;
     color: var(--primary-color);
 }
 
+/* עיצוב כוכבית שדה חובה באדום */
 .required-star {
     color: #e74c3c;
     margin-right: 0.2rem;
 }
 
+/* עיצוב גלובלי אחיד לכל שדות הקלט, הבחירה ותיבות הטקסט בטפסים */
 .form-group input,
 .form-group select,
 .form-group textarea {
@@ -359,6 +454,7 @@ main > section {
     width: 100%;
 }
 
+/* עיצוב מצב פוקוס/סימון שדה בטופס */
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
@@ -367,21 +463,24 @@ main > section {
 }
 
 /* ==========================================================================
-   5. סקשנים - עמוד הבית (Home Page Sections)
+   5. סקשנים - עמוד הבית (Home Page)
    ========================================================================== */
+
 /* --- Hero --- */
+
+/* אזור ההצגה הראשי של עמוד הבית (תמונת רקע וגובה) */
 .hero {
     text-align: center;
     padding: 80px 0;
     position: relative;
     border-bottom: 5px solid var(--secondary-color);
-
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../img/bg.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
 }
 
+/* קופסת התוכן הלבנה הצפה במרכז ההירו */
 .hero-content {
     background-color: rgba(255, 255, 255, 0.9);
     padding: var(--spacing-xl);
@@ -391,17 +490,20 @@ main > section {
     margin: 0 auto;
 }
 
+/* הגופן של הכותרת הראשית בהירו */
 .hero-title {
     font-size: 3.2rem;
     margin-bottom: var(--spacing-sm);
 }
 
+/* כותרת המשנה בהירו */
 .hero-subtitle {
     font-size: 1.2rem;
     margin-bottom: var(--spacing-lg);
     color: var(--text-muted);
 }
 
+/* סידור כפתורי הפעולה בהירו זה לצד זה */
 .hero-buttons {
     display: flex;
     justify-content: center;
@@ -409,12 +511,15 @@ main > section {
 }
 
 /* --- Feature Cards --- */
+
+/* רשת גריד להצגת כרטיסיות הפיצ'רים המרכזיות בעמוד הבית */
 .cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: var(--spacing-lg);
 }
 
+/* כרטיסיית פיצ'ר בודדת */
 .feature-card {
     display: flex;
     flex-direction: column;
@@ -423,19 +528,23 @@ main > section {
     border-radius: 12px;
     text-align: center;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    /* פס עליון מעוצב בצבע המותג */
     border-top: 4px solid var(--primary-light);
     transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
 }
 
+/* האייקון/אימוג'י הגדול בראש כרטיסיית הפיצ'ר */
 .card-icon {
     font-size: 3rem;
     margin-bottom: var(--spacing-md);
 }
 
+/* מרווח מתחת לכותרת הכרטיסייה */
 .feature-card h3 {
     margin-bottom: var(--spacing-sm);
 }
 
+/* עיצוב פסקת התיאור של הכרטיסייה ודחיפת הכפתור לתחתית */
 .feature-card p {
     flex-grow: 1;
     color: var(--text-muted);
@@ -443,17 +552,21 @@ main > section {
 }
 
 /* --- Sound Lab --- */
+
+/* רקע ייחודי לסקשן מעבדת הסאונד */
 .section-sounds {
     background-color: var(--background-light);
     border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
+/* רשת הגריד להצגת כרטיסיות הסאונד */
 .sounds-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: var(--spacing-lg);
 }
 
+/* כרטיסיית צליל רקע בודדת */
 .sound-card {
     background-color: var(--white);
     padding: var(--spacing-xl);
@@ -461,23 +574,25 @@ main > section {
     text-align: center;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
     transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    /* קו תחתון דקורטיבי */
     border-bottom: 4px solid var(--primary-light);
 }
 
+/* קופסת האימוג'י הגדול של כרטיסיית הסאונד */
 .sound-icon {
     font-size: 3.5rem;
     margin-bottom: var(--spacing-md);
     display: inline-block;
     padding: var(--spacing-sm);
-    background-color: var(--background-light);
-    border-radius: 50%;
 }
 
+/* כותרת הסאונד */
 .sound-content h3 {
     margin-bottom: var(--spacing-sm);
     font-size: 1.4rem;
 }
 
+/* פירוט קצר על סוג הסאונד */
 .sound-content p {
     color: var(--text-muted);
     margin-bottom: var(--spacing-lg);
@@ -485,6 +600,8 @@ main > section {
 }
 
 /* --- Tip of the Day (Aside) --- */
+
+/* עיצוב בלוק הטיפ היומי (רכיב צדדי/Aside) */
 .tip-of-the-day {
     background: var(--tip-gradient);
     color: var(--white);
@@ -495,12 +612,14 @@ main > section {
     box-shadow: 0 10px 25px rgba(75, 55, 124, 0.25);
 }
 
+/* כותרת הטיפ היומי בצבע בולט */
 .tip-of-the-day h2 {
     color: var(--focus-color);
     font-size: 2rem;
     margin-bottom: var(--spacing-sm);
 }
 
+/* טקסט הטיפ הממורכז */
 .aside-text {
     font-size: 1.2rem;
     max-width: 800px;
@@ -509,10 +628,21 @@ main > section {
 }
 
 /* ==========================================================================
-   6. עמודים פנימיים (Internal Pages)
+   6. עמוד פנימי: שיטות למידה (Methods Page)
    ========================================================================== */
 
-/* --- 6.1 שיטות: מטריצת אייזנהואר --- */
+/* --- מטריצת אייזנהואר --- */
+
+/* סידור פריסת העמוד של המטריצה: גריד הריבועים בצד אחד, וקנבס הפתקיות בצד שני */
+.eisenhower-grid-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 40px;
+    align-items: start;
+    margin-top: var(--spacing-xl);
+}
+
+/* הגריד הפנימי של 4 הריבועים (הרביעים) במטריצה */
 .eisenhower-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -521,6 +651,7 @@ main > section {
     margin: 0 auto;
 }
 
+/* עיצוב בסיסי של ריבוע (רבע) במטריצה */
 .matrix-box {
     background-color: var(--white);
     padding: var(--spacing-lg);
@@ -530,11 +661,13 @@ main > section {
     transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
+/* כותרת הרבע */
 .matrix-box h3 {
     margin-bottom: var(--spacing-xs);
     font-size: 1.3rem;
 }
 
+/* תגית הסטטוס הקטנה בכל רביע במטריצה */
 .matrix-tag {
     display: inline-block;
     padding: 0.2rem 0.6rem;
@@ -545,31 +678,35 @@ main > section {
     color: var(--white);
 }
 
+/* התאמת צבעים ייחודית לרבע 1: לעשות עכשיו (אדום) */
 .box-do { border-right-color: #e74c3c; }
 .box-do .matrix-tag { background-color: #e74c3c; }
 .box-do h3 { color: #e74c3c; }
 
+/* התאמת צבעים ייחודית לרבע 2: לתזמן (כחול) */
 .box-schedule { border-right-color: #3498db; }
 .box-schedule .matrix-tag { background-color: #3498db; }
 .box-schedule h3 { color: #3498db; }
 
+/* התאמת צבעים ייחודית לרבע 3: להאציל (כתום) */
 .box-delegate { border-right-color: #f39c12; }
 .box-delegate .matrix-tag { background-color: #f39c12; }
 .box-delegate h3 { color: #f39c12; }
 
+/* התאמת צבעים ייחודית לרבע 4: למחוק (סגול) */
 .box-drop { border-right-color: #9b59b6; }
 .box-drop .matrix-tag { background-color: #9b59b6; }
 .box-drop h3 { color: #9b59b6; }
 
-.eisenhower-grid-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 350px;
-    gap: 40px;
-    align-items: start;
-    margin-top: var(--spacing-xl);
+/* סגנון ויזואלי לרבע בזמן שגוררים מעליו פתקית אינטראקטיבית */
+.matrix-box.drag-over {
+    background-color: rgba(43, 92, 143, 0.1);
+    border-style: dashed;
 }
 
-/* עיצוב הקנבס והפתקים */
+/* --- סביבת תרגול ופתקיות --- */
+
+/* אזור לוח העבודה/קנבס של גרירת המשימות */
 .practice-canvas-area {
     background-color: #fcfcfc;
     border: 2px dashed var(--primary-light);
@@ -578,12 +715,14 @@ main > section {
     box-shadow: inset 0 0 15px rgba(0,0,0,0.02);
 }
 
+/* שורת קלט להוספת משימה חדשה (אינפוט + כפתור) */
 .task-input-group {
     display: flex;
     gap: 10px;
     margin: 20px 0;
 }
 
+/* מאגר הפתקיות שממנו המשתמש גורר את המשימות */
 .notes-pool {
     min-height: 300px;
     display: flex;
@@ -594,6 +733,7 @@ main > section {
     border-radius: 8px;
 }
 
+/* עיצוב פתקית צהובה דמויית סטיקי-נוט אמיתית */
 .sticky-note {
     background-color: #fff4bd;
     color: #333;
@@ -609,26 +749,53 @@ main > section {
     display: flex;
     align-items: center;
     justify-content: center;
+    /* פס תחתון כהה יותר לקבלת תלת מימד */
     border-bottom: 2px solid #e1d48c;
 }
 
-/* מצב גרירה מעל רבע */
-.matrix-box.drag-over {
-    background-color: rgba(43, 92, 143, 0.1);
-    border-style: dashed;
+/* --- פומודורו טיימר --- */
+
+/* פריסת הפיצול של עמוד פומודורו: מידע בצד ימין, טיימר בצד שמאל */
+.pomodoro-split-layout {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 30px;
+    align-items: stretch;
+    margin-top: var(--spacing-lg);
 }
 
-/* --- 6.2 שיטות: פומודורו --- */
+/* עיצוב בסיסי לשתי הכרטיסיות הגדולות בפומודורו */
+.pomodoro-info-card,
+.pomodoro-timer-card {
+    background-color: var(--white);
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+/* מרכוז מוחלט של רכיבי השעון בכרטיסיית הטיימר */
+.pomodoro-timer-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+/* רשימת שלבי עבודת הפומודורו */
 .steps-list {
     margin-top: var(--spacing-md);
     padding-right: var(--spacing-lg);
 }
 
+/* רווח בין שורות השלבים */
 .steps-list li {
     margin-bottom: var(--spacing-sm);
     padding-right: var(--spacing-xs);
 }
 
+/* מעטפת הוידג'ט האינטראקטיבי של שעון הפומודורו */
 .pomodoro-interactive-widget {
     display: flex;
     flex-direction: column;
@@ -637,25 +804,27 @@ main > section {
     margin: var(--spacing-lg) 0;
 }
 
+/* קופסת השעון המעגלי הפיזית */
 .timer-wrapper {
     position: relative;
     width: 200px;
     height: 200px;
 }
 
-/* סיבוב ה-SVG כדי שהפס האדום יתחיל בדיוק מלמעלה (12 בשעון) */
+/* סיבוב עיגול ה-SVG ב-270 מעלות כדי שהאנימציה תתחיל בדיוק מפסגת השעון (שעה 12) */
 .progress-ring {
     transform: rotate(270deg);
 }
 
+/* פס התקדמות אדום חי של שעון הפומודורו */
 .progress-ring-active {
-    stroke-dasharray: 553; /* היקף המעגל */
+    stroke-dasharray: 553;
     stroke-dashoffset: 0;
     transition: stroke-dashoffset 1s linear;
     stroke-linecap: round;
 }
 
-/* מרכוז הטקסט בתוך העיגול בצורה נקייה */
+/* תצוגת מספר הדקות והשניות הדיגיטלית במרכז המעגל */
 .timer-display {
     position: absolute;
     top: 0;
@@ -671,41 +840,18 @@ main > section {
     font-family: 'Rubik', sans-serif;
 }
 
+/* כפתורי השליטה (הפעלה/איפוס) מתחת לשעון */
 .timer-controls {
     margin-top: var(--spacing-md);
     display: flex;
     gap: var(--spacing-sm);
 }
 
-/* פריסת שתי כרטיסיות לפומודורו */
-.pomodoro-split-layout {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr; /* נותן קצת יותר מקום לטקסט מאשר לטיימר */
-    gap: 30px;
-    align-items: stretch; /* דואג ששתי הכרטיסיות יהיו באותו גובה */
-    margin-top: var(--spacing-lg);
-}
+/* ==========================================================================
+   7. עמוד פנימי: כלים דיגיטליים ו-Quizlet (Digital Tools)
+   ========================================================================== */
 
-/* עיצוב משותף לשתי הכרטיסיות */
-.pomodoro-info-card,
-.pomodoro-timer-card {
-    background-color: var(--white);
-    border-radius: 15px;
-    padding: 40px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-    border: 1px solid rgba(0, 0, 0, 0.02);
-}
-
-/* מירכוז התוכן בתוך כרטיסיית הטיימר */
-.pomodoro-timer-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-}
-
-/* --- 6.3 כלים דיגיטליים --- */
+/* רשת גריד להצגת כרטיסיות הכלים הטכנולוגיים (AI, יומנים וכו') */
 .tools-layout {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -714,6 +860,7 @@ main > section {
     margin: 0 auto;
 }
 
+/* כרטיסיית כלי טכנולוגי בודד */
 .tool-item-card {
     display: flex;
     flex-direction: column;
@@ -725,6 +872,7 @@ main > section {
     transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
+/* תגית הקטגוריה בראש כל כרטיסיית כלי */
 .tool-badge {
     align-self: flex-start;
     background-color: rgba(230, 126, 34, 0.12);
@@ -736,12 +884,14 @@ main > section {
     margin-bottom: var(--spacing-sm);
 }
 
+/* שם הכלי הטכנולוגי */
 .tool-item-card h3 {
     font-size: 1.4rem;
     margin-bottom: var(--spacing-xs);
     color: var(--primary-color);
 }
 
+/* פסקת ההסבר על הכלי והערך שלו לסטודנט */
 .tool-item-card p {
     color: var(--text-muted);
     font-size: 0.95rem;
@@ -749,10 +899,22 @@ main > section {
     flex-grow: 1;
 }
 
+/* יישור כפתור הקישור החיצוני לצד ימין בכרטיסייה */
 .tool-item-card .btn {
     align-self: flex-start;
 }
 
+/* עיצוב אחיד ומניעת מתיחה ללוגואים של חברות ה-AI */
+.tool-logo {
+    width: 100px;
+    max-height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.05));
+}
+
+/* --- Quizlet Banner & Flashcard Component --- */
+
+/* קופסת הבאנר המרכזית הגדולה של מקטע קוויזלט */
 .quizlet-banner-box {
     display: flex;
     align-items: center;
@@ -763,43 +925,154 @@ main > section {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
 }
 
-.tool-logo {
-    width: 100px;
-    max-height: 100%;
-    object-fit: contain;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.05));
-}
-
-.quizlet-main-logo {
-    width: 100px;
-    height: auto;
-    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
-}
-
+/* אזור הטקסטים והכפתור בתוך באנר קוויזלט (תופס 2 שלישים מהרוחב) */
 .quizlet-info {
     flex: 2;
 }
 
+/* כותרת מקטע קוויזלט */
 .quizlet-info h2 {
     font-size: 2rem;
     margin-bottom: var(--spacing-sm);
     color: var(--primary-color);
 }
 
+/* פירוט הלמידה באמצעות כרטיסיות */
 .quizlet-info p {
     color: var(--text-main);
     margin-bottom: var(--spacing-lg);
     font-size: 1.05rem;
 }
 
-.quizlet-visual-container {
-    flex: 1;
-    font-size: 5rem;
-    text-align: center;
-    line-height: 1;
+/* קופסת המעטפת השמאלית הויזואלית (ממרכזת את הלוגו והכרטיסייה יחד באותו קו אמצע) */
+.quizlet-visual-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 300px;
 }
 
-/* --- 6.4 עמוד אודות --- */
+/* תמונת הלוגו המקורית של Quizlet - מיושרת וממורכזת באופן מוחלט */
+.quizlet-main-logo {
+    display: block;
+    max-width: 140px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+}
+
+/* בלוק המדריך האינטראקטיבי המלא */
+.quizlet-interactive-demo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* טקסט ההוראה הקטן מעל כרטיסיית השינון */
+.demo-instruction {
+    font-size: 0.85rem;
+    color: #555;
+    margin-bottom: 8px;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* אלמנט כפתור כרטיסיית השינון (Flashcard) - מוגדר כפתור לטובת נגישות מלאה */
+.flashcard {
+    background: transparent;
+    border: none;
+    width: 260px;
+    height: 150px;
+    perspective: 1000px; /* מעניק עומק תלת מימדי בזמן סיבוב */
+    cursor: pointer;
+    padding: 0;
+    display: block;
+}
+
+/* מסגרת פוקוס נגישות מותאמת עבור כרטיסיית השינון בלחיצת Tab */
+.flashcard:focus {
+    outline: 3px solid #0056b3;
+    outline-offset: 5px;
+    border-radius: 12px;
+}
+
+/* קופסת המעטפת הפנימית שמבצעת את הסיבוב הגרפי בפועל */
+.flashcard-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); /* סיבוב חלק ומקצועי */
+    transform-style: preserve-3d; /* חובה לשמירה על חוקי תלת מימד */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-radius: 12px;
+}
+
+/* המחלקה הדינמית המופעלת על ידי ה-JS בלחיצה ומסובבת את הכרטיסייה ב-180 מעלות */
+.flashcard.is-flipped .flashcard-inner {
+    transform: rotateY(180deg);
+}
+
+/* סגנון משותף וקבוע לשני צדי הכרטיסייה (הקדמי והאחורי) */
+.flashcard-front, .flashcard-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* מסתיר את הצד ההפוך שלא אמורים לראות כרגע */
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* עיצוב צד א' (קדמי): מושג באנגלית - גוון כחול עדין של קוויזלט */
+.flashcard-front {
+    background-color: #f0f4ff;
+    color: #303545;
+    border: 2px solid #4255ff;
+}
+
+/* עיצוב צד ב' (אחורי): פירוש בעברית - גוון ירוק של תשובה נכונה */
+.flashcard-back {
+    background-color: #e6f4ea;
+    color: #137333;
+    border: 2px solid #137333;
+    transform: rotateY(180deg); /* הופך את הצד מראש כדי שייחשף נכון בהיפוך */
+}
+
+/* תגיות השפה הקטנות בפינה העליונה של הכרטיסייה ("מושג"/"פירוש") */
+.card-lang {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    opacity: 0.7;
+}
+
+/* טקסט המונח המרכזי בתוך כרטיסיית השינון */
+.card-text {
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+/* ==========================================================================
+   8. עמודים פנימיים נוספים (About, Contact & Sitemap)
+   ========================================================================== */
+
+/* --- אודות (About Page) --- */
+
+/* קופסת סיפור הרקע של המיזם עם פס שמאלי מעוצב */
 .about-story-block {
     max-width: 850px;
     margin: 0 auto;
@@ -810,6 +1083,7 @@ main > section {
     border-left: 5px solid var(--primary-color);
 }
 
+/* עיצוב פסקאות הסיפור (יישור טקסט דו-צדדי לקריאות אקדמית) */
 .story-content p {
     font-size: 1.1rem;
     color: var(--text-main);
@@ -817,15 +1091,18 @@ main > section {
     text-align: justify;
 }
 
+/* הדגשות טקסט בתוך הסיפור בצבע המותג */
 .story-content strong {
     color: var(--primary-color);
 }
 
+/* רקע מותאם לסקשן חברי צוות הפיתוח */
 .section-team {
     background-color: var(--background-light);
     border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
+/* רשת הגריד המציגה את כרטיסיות חברי הצוות המפתחים */
 .team-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -834,6 +1111,7 @@ main > section {
     margin: 0 auto var(--spacing-xl);
 }
 
+/* כרטיסיית פרופיל של מפתח/ת בצוות */
 .team-card {
     background-color: var(--white);
     padding: var(--spacing-xl) var(--spacing-md);
@@ -844,18 +1122,21 @@ main > section {
     transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
+/* אזור האוזניות/אוואטר האימוג'י של המפתח */
 .team-avatar {
     font-size: 3rem;
     margin-bottom: var(--spacing-sm);
     line-height: 1;
 }
 
+/* שם איש הצוות */
 .team-card h3 {
     font-size: 1.3rem;
     color: var(--primary-color);
     margin-bottom: 0.2rem;
 }
 
+/* תפקיד חבר הצוות (בצבע כתום משני) */
 .team-role {
     font-size: 0.9rem;
     font-weight: 600;
@@ -863,12 +1144,14 @@ main > section {
     margin-bottom: var(--spacing-sm);
 }
 
+/* תיאור קצר או ביוגרפיה קטנה על חבר הצוות */
 .team-bio {
     font-size: 0.9rem;
     color: var(--text-muted);
     line-height: 1.5;
 }
 
+/* בלוק המידע האקדמי המסכם בתחתית עמוד אודות */
 .academic-context {
     max-width: 600px;
     margin: var(--spacing-xl) auto 0;
@@ -878,11 +1161,14 @@ main > section {
     font-size: 1rem;
 }
 
+/* צבע הדגשת הטקסט בקונטקסט האקדמי */
 .academic-context strong {
     color: var(--text-main);
 }
 
-/* --- 6.5 צור קשר --- */
+/* --- צור קשר (Contact Page) --- */
+
+/* מעטפת עמוד צור קשר (חלוקה של 2 שלישים לטופס, ושליש אחד לפרטי המוסד) */
 .contact-wrapper {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -891,6 +1177,7 @@ main > section {
     margin: 0 auto;
 }
 
+/* קופסת מיכל הטופס הלבנה */
 .contact-form-container {
     background-color: var(--white);
     padding: var(--spacing-xl);
@@ -898,24 +1185,28 @@ main > section {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
 }
 
+/* סידור שדות הטופס כטור אנכי */
 .contact-form {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-md);
 }
 
+/* כפתור שליחת הטופס הראשי - מיושר לימין ורחב */
 .btn-submit {
     align-self: flex-start;
     padding: var(--spacing-sm) var(--spacing-xl);
     font-size: 1.05rem;
 }
 
+/* עמודת תיבות המידע בצד טופס יצירת הקשר */
 .contact-info-container {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-lg);
 }
 
+/* כרטיסיית מידע בודדת (פרטי פקולטה / צוות) עם קו ימני כתום */
 .info-card {
     background-color: var(--white);
     padding: var(--spacing-lg);
@@ -924,18 +1215,21 @@ main > section {
     border-right: 4px solid var(--secondary-color);
 }
 
+/* כותרת כרטיסיית המידע בצור קשר */
 .info-card h3 {
     font-size: 1.25rem;
     margin-bottom: var(--spacing-sm);
     color: var(--primary-color);
 }
 
+/* פסקת הפרטים הכללית בכרטיסייה */
 .info-details {
     color: var(--text-muted);
     font-size: 0.95rem;
     margin-bottom: var(--spacing-md);
 }
 
+/* רשימות הפרטים המדויקות (מוסד, פקולטה, שנה) */
 .info-list,
 .team-names-list {
     list-style: none;
@@ -945,15 +1239,18 @@ main > section {
     font-size: 0.95rem;
 }
 
+/* הדגשת תוויות המידע האקדמי */
 .info-list li strong {
     color: var(--primary-color);
 }
 
+/* מיקום יחסי לשורות שמות חברי הצוות לטובת הבולט הכתום */
 .team-names-list li {
     position: relative;
     padding-right: var(--spacing-sm);
 }
 
+/* יצירת בולט (נקודה) מותאם אישית בצבע כתום לפני שמות המגישים */
 .team-names-list li::before {
     content: "•";
     color: var(--secondary-color);
@@ -962,7 +1259,9 @@ main > section {
     font-weight: bold;
 }
 
-/* --- 6.6 מפת האתר --- */
+/* --- מפת האתר (Sitemap) --- */
+
+/* קופסת המעטפת של מפת האתר */
 .sitemap-container {
     max-width: 800px;
     margin: 0 auto;
@@ -972,18 +1271,21 @@ main > section {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
 }
 
+/* הגדרות בסיס לרשימות ותתי-הרשימות של מפת האתר (הסרת נקודות ברירת מחדל) */
 .sitemap-list,
 .sitemap-sublist,
 .sitemap-sublist-inner {
     list-style: none;
 }
 
+/* תת-רשימה של עמודים פנימיים ראשיים (עם קו הפרדה כחול ימני) */
 .sitemap-sublist {
     padding-right: var(--spacing-lg);
     margin-top: var(--spacing-md);
     border-right: 2px solid var(--primary-light);
 }
 
+/* תת-רשימה פנימית עמוקה של תתי-נושאים (עם קו מרוסק עדין) */
 .sitemap-sublist-inner {
     padding-right: var(--spacing-lg);
     margin-top: var(--spacing-xs);
@@ -991,11 +1293,13 @@ main > section {
     margin-bottom: var(--spacing-md);
 }
 
+/* מרווח בין קישורי מפת האתר */
 .sitemap-list li {
     margin-bottom: var(--spacing-sm);
     position: relative;
 }
 
+/* עיצוב אחיד לבלוקי הקישורים במפת האתר */
 .sitemap-link,
 .sitemap-link-minor {
     display: inline-block;
@@ -1004,6 +1308,7 @@ main > section {
     transition: background-color var(--transition-fast), color var(--transition-fast);
 }
 
+/* הקישור הראשי של דף הבית במפת האתר (גדול ובולט) */
 .sitemap-main {
     font-size: 1.4rem;
     font-weight: 700;
@@ -1011,144 +1316,101 @@ main > section {
     background-color: rgba(43, 92, 143, 0.1);
 }
 
+/* עיצוב קישורי עמודים פנימיים */
 .sitemap-link {
     font-size: 1.1rem;
     font-weight: 600;
 }
 
+/* עיצוב קישורי תתי-נושאים קטנים (אפורים) */
 .sitemap-link-minor {
     font-size: 0.95rem;
     color: var(--text-muted);
 }
 
+/* חסימת אינטראקציה וצביעה בכתום עבור העמוד הנוכחי שבו המשתמש צופה במפה */
 .sitemap-current {
     color: var(--secondary-color);
     pointer-events: none;
 }
 
-/* ==========================================================================
-   7. אפקטים ואנימציות (Effects & Animations)
-   ========================================================================== */
+/* --- אפקטי ריחוף ואנימציות קבועות --- */
 
-/* --- Custom Cursor --- */
-.custom-cursor {
-    width: 20px;
-    height: 20px;
-    background-color: rgba(230, 126, 34, 0.3);
-    border: 2px solid var(--secondary-color);
-    border-radius: 50%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    z-index: 10000;
-    transform: translate(0, 0);
-    display: none;
-}
-
-.custom-cursor.hover {
-    transform: scale(1.6);
-    background-color: rgba(43, 92, 143, 0.2);
-    border-color: var(--primary-color);
-}
-
-/* --- Scroll Indicator Animation --- */
+/* מעטפת חץ הגלילה האלגנטי בהירו */
 .scroll-indicator {
     display: block;
     margin: var(--spacing-xl) auto 0;
     font-size: 2rem;
     color: var(--white);
-    animation: bounce 2s infinite;
+    animation: bounce 2s infinite; /* הפעלת אנימציית הקפצה קבועה */
 }
 
+/* הגדרת שלבי האנימציה של הקפצת חץ הגלילה (Keyframes) */
 @keyframes bounce {
     0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
     40% { transform: translateY(10px); }
     60% { transform: translateY(5px); }
 }
 
-/* --- Button Hover Effects --- */
-.btn:hover {
-    transform: scale(1.05);
-}
+/* הגדלה קלה של כפתורים בריחוף עכבר */
+.btn:hover { transform: scale(1.05); }
 
-.btn-primary:hover, .btn-secondary:hover {
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-    color: var(--white);
-}
+/* הוספת צל חזק יותר לכפתורים צבועים בריחוף עכבר */
+.btn-primary:hover, .btn-secondary:hover { box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); color: var(--white); }
 
-.btn-outline:hover {
-    background-color: var(--primary-color);
-    color: var(--white);
-}
+/* צביעת הרקע של כפתור קו המתאר בריחוף עכבר */
+.btn-outline:hover { background-color: var(--primary-color); color: var(--white); }
 
-/* --- Cards Hover Effects --- */
-.feature-card:hover {
-    transform: scale(1.03);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-}
+/* אפקט הגדלה וצל לכרטיסיות פיצ'רים בריחוף עכבר */
+.feature-card:hover { transform: scale(1.03); box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); }
 
-.sound-card:hover {
-    transform: scale(1.04);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
-    border-bottom-color: var(--secondary-color);
-}
+/* אפקט שינוי צבע פס תחתון והגדלה לכרטיסיית סאונד בריחוף */
+.sound-card:hover { transform: scale(1.04); box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08); border-bottom-color: var(--secondary-color); }
 
-.matrix-box:hover {
-    transform: scale(1.02);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-}
+/* אפקט צל והרמה עדינה לרביעי מטריצת אייזנהואר בריחוף */
+.matrix-box:hover { transform: scale(1.02); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); }
 
-.tool-item-card:hover {
-    transform: scale(1.02);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-}
+/* אפקט הגדלה לכרטיסיות הכלים הדיגיטליים */
+.tool-item-card:hover { transform: scale(1.02); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08); }
 
-.team-card:hover {
-    transform: scale(1.03);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-    border-top-color: var(--secondary-color);
-}
+/* אפקט שינוי צבע פס עליון לכתום והגדלה לכרטיסיית איש צוות בריחוף */
+.team-card:hover { transform: scale(1.03); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08); border-top-color: var(--secondary-color); }
 
-/* --- Sitemap Link Hover Effects --- */
-.sitemap-link:hover,
-.sitemap-link-minor:hover {
-    background-color: var(--primary-light);
-    color: var(--white);
-}
+/* צביעת רקע הקישורים במפת האתר בריחוף עכבר */
+.sitemap-link:hover, .sitemap-link-minor:hover { background-color: var(--primary-light); color: var(--white); }
+
 
 /* ==========================================================================
-   8. רספונסיביות (Media Queries)
+   9. רספונסיביות ומדיה קוויריז (All Media Queries - Consolidated)
    ========================================================================== */
 
-/* --- טאבלטים ומסכים בינוניים (max-width: 992px) --- */
+/* --- טאבלטים ומסכים בינוניים (נקודת שבירה: 992 פיקסלים ומטה) --- */
 @media screen and (max-width: 992px) {
-    /* כותרות ראשיות ופתיח */
+
+    /* הקטנת גודל גופן של כותרות העמוד הראשיות להתאמה למסך בינוני */
     .hero-title, .page-title {
         font-size: 2.8rem;
     }
 
+    /* הקטנת כותרות סקשנים */
     .section-title {
         font-size: 2.2rem;
     }
 
+    /* צמצום ריפוד תיבת ההירו */
     .hero-content {
         padding: var(--spacing-lg);
     }
 
-    /* עמוד שיטות למידה - פומודורו ומטריצת אייזנהואר */
-    .eisenhower-grid {
+    /* הפיכת הגרידים המפוצלים של האתר (אייזנהואר, פומודורו, צור קשר) לטור אנכי יחיד */
+    .eisenhower-grid,
+    .eisenhower-grid-wrapper,
+    .pomodoro-split-layout,
+    .contact-wrapper {
         grid-template-columns: 1fr;
     }
 
-    .eisenhower-grid-wrapper {
-        grid-template-columns: 1fr;
-    }
-
-    .pomodoro-split-layout {
-        grid-template-columns: 1fr;
-    }
-
+    /* יישור טקסט השלבים של פומודורו לימין במסך בינוני */
     .steps-list {
         padding-right: 0;
         text-align: right;
@@ -1156,50 +1418,46 @@ main > section {
         margin-top: var(--spacing-lg);
     }
 
-    /* עמוד כלים דיגיטליים - באנר קוויזלט */
+    /* הפיכת באנר קוויזלט למבנה אנכי וממורכז */
     .quizlet-banner-box {
         flex-direction: column;
         text-align: center;
+        gap: 30px;
     }
 
+    /* מרכוז אוטומטי של כפתור קוויזלט */
     .quizlet-info .btn {
         margin: 0 auto;
     }
 
-    /* עמוד צור קשר */
-    .contact-wrapper {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-xl);
-    }
-
+    /* מתיחת כפתור שליחת הטופס למלוא רוחב המסך */
     .btn-submit {
         width: 100%;
     }
 
-    /* עמוד אודות - רשת חברי הצוות */
-    .team-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .about-story-block {
-        padding: var(--spacing-lg);
-    }
-
-    /* פוטר */
+    /* פריסת גריד חברי הצוות והפוטר ל-2 טורים בדיוק במקום 4 */
+    .team-grid,
     .footer-content {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    /* צמצום מרווחים בבלוק הסיפור באודות */
+    .about-story-block {
+        padding: var(--spacing-lg);
+    }
 }
 
-/* --- מובייל ומסכים קטנים (max-width: 768px) --- */
+/* --- סמארטפונים ומסכים קטנים (נקודת שבירה: 768 פיקסלים ומטה) --- */
 @media screen and (max-width: 768px) {
-    /* תפריט ניווט ותיקון תפריט המבורגר */
+
+    /* הצגת כפתור תפריט ההמבורגר הנסתר במסכי מובייל */
     .hamburger {
         display: flex;
     }
 
+    /* הפיכת תפריט הניווט הראשי לקופסה נפתחת אבסולוטית מעל התוכן */
     .nav-menu {
-        display: none;
+        display: none; /* מוסתר כברירת מחדל עד ללחיצה */
         flex-direction: column;
         position: absolute;
         top: 80px;
@@ -1210,11 +1468,12 @@ main > section {
         padding: var(--spacing-md) 0;
     }
 
+    /* הצגת התפריט בפועל כאשר מחלקת 'active' מופעלת על הניווט על ידי ה-JS */
     #navMenu.active .nav-menu {
         display: flex;
     }
 
-    /* אזור הפתיח (Hero) */
+    /* התאמת גובה סקשן ההירו והריפוד שלו למסכי מובייל קטנים */
     .hero {
         padding: 40px 0;
         min-height: 80vh;
@@ -1222,59 +1481,55 @@ main > section {
         align-items: center;
     }
 
+    /* התאמת רוחב קופסת ההירו למסך הנייד */
     .hero-content {
         width: 90%;
         padding: var(--spacing-lg);
         margin: 0 auto;
     }
 
+    /* הקטנת כותרת ההירו למניעת שבירת מילים מוזרה */
     .hero-title {
         font-size: 2.2rem;
     }
 
+    /* סידור כפתורי ההירו בטור אנכי אחד תחת השני במובייל */
     .hero-buttons {
         flex-direction: column;
         width: 100%;
     }
 
+    /* מתיחת כפתורי ההירו למלוא רוחב המסך ומרווח תחתון ביניהם */
     .hero-buttons .btn {
         width: 100%;
         margin-bottom: 10px;
     }
 
-    /* ביטול עכבר מותאם במסכי מגע */
-    .custom-cursor {
-        display: none !important;
-    }
-
-    body {
-        cursor: auto;
-    }
-
-    /* שיטות - פומודורו טיימר */
+    /* סידור כפתורי השליטה של שעון הפומודורו בטור אחד במובייל */
     .timer-controls {
         flex-direction: column;
         width: 100%;
         max-width: 200px;
     }
 
-    /* כלים דיגיטליים - Quizlet */
+    /* צמצום ריפוד באנר קוויזלט במובייל */
     .quizlet-banner-box {
-        flex-direction: column;
-        text-align: center;
         padding: var(--spacing-lg);
     }
 
+    /* מתיחת כפתור קוויזלט למלוא הרוחב בנייד */
     .quizlet-info .btn {
         display: block;
         width: 100%;
     }
 
-    /* אודות */
-    .about-story-block {
-        padding: var(--spacing-lg);
+    /* הוספת מרווח עליון בין רכיב כרטיסיית השינון לטקסט שמעליו במובייל */
+    .quizlet-visual-side {
+        margin-right: 0;
+        margin-top: 30px;
     }
 
+    /* הפיכת גריד חברי הצוות לטור אנכי יחיד וממורכז בנייד */
     .team-grid {
         grid-template-columns: 1fr;
         max-width: 320px;

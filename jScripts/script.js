@@ -202,3 +202,22 @@ if (contactForm) {
         contactForm.reset();
     });
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const flashcard = document.getElementById('demoFlashcard');
+
+    if (flashcard) {
+        flashcard.addEventListener('click', function() {
+            // היפוך הכרטיסייה ויזואלית
+            this.classList.toggle('is-flipped');
+
+            // עדכון חיווי הנגישות לקורא המסך
+            const isFlipped = this.classList.contains('is-flipped');
+            if (isFlipped) {
+                this.setAttribute('aria-label', "צד ב': הפירוש הוא: למידה פעילה (תרגול, מעורבות ויישום). לחצו להפיכת הכרטיסייה חזרה.");
+            } else {
+                this.setAttribute('aria-label', "צד א': מונח באנגלית: Active Learning. לחצו לחשיפת הפירוש.");
+            }
+        });
+    }
+});
